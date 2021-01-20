@@ -1,0 +1,20 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 2
+      maximum-pool-size: 50
+    url: jdbc:mysql://localhost:3306/loop?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: false
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # 打印sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    cache-enabled: false
