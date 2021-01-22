@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ch" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="nav(menu)">
+	<header class="mdui-appbar mdui-appbar-fixed">
+		<div class="mdui-toolbar mdui-color-theme">
+		<span th:if="${menu}" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
+		      mdui-drawer="{target: '#main-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
+			<a href="../" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
+			<a href="./" class="mdui-typo-title">文档</a>
+			<div class="mdui-toolbar-spacer"></div>
+			<span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
+			      mdui-dialog="{target: '#dialog-docs-theme'}"
+			      mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">color_lens</i></span>
+
+		</div>
+	</header>
+	<div class="mdui-drawer" id="main-drawer" th:if="${menu}">
+		<div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+			<div class="mdui-collapse-item ">
+				<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+					<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">near_me</i>
+					<div class="mdui-list-item-content">开始使用</div>
+					<i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+				</div>
+				<div class="mdui-collapse-item-body mdui-list">
+					<a href="./introduction" class="mdui-list-item mdui-ripple ">简介</a>
+					<a href="./download" class="mdui-list-item mdui-ripple ">下载</a>
+					<a href="./compatibility" class="mdui-list-item mdui-ripple ">兼容性</a>
+					<a href="./jq" class="mdui-list-item mdui-ripple ">JavaScript 工具库</a>
+					<a href="./global" class="mdui-list-item mdui-ripple ">JavaScript 全局方法</a>
+					<a href="./migration" class="mdui-list-item mdui-ripple ">从 0.4.3 升级到 1.0.0</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</th:block>
+</html>

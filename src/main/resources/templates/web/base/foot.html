@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ch">
+<!--底部模块-->
+<th:block th:fragment="footer">
+	<div class="mdui-fab-wrapper" id="fab-btn-top">
+		<button class="mdui-fab mdui-ripple mdui-color-theme" id="btn-top">
+			<!-- 默认显示的图标 -->
+			<i class="mdui-icon material-icons">vertical_align_top</i>
+		</button>
+	</div>
+	<footer>
+		<p>Powered by Loop</p>
+		<ul class="ul-foot-link ">
+			<li>
+				<a href="/" class="mdui-text-color-theme-secondary">关于我们</a>
+			</li>
+			<li>
+				<a href="/" class="mdui-text-color-theme-secondary">联系我们</a>
+			</li>
+			<li class="mdui-text-color-theme-secondary">@2021-2021</li>
+			<li class="mdui-text-color-theme-secondary">备案号 XXXXXXXXXXXXX</li>
+		</ul>
+	</footer>
+	<script th:src="@{/lib/mdui-v1.0.1/js/mdui.js}"></script>
+	<script th:src="@{/lib/jquery/jquery.min.js}"></script>
+	<script th:src="@{/lib/scroll/smooth-scroll.min.js}"></script>
+	<script th:src="@{/js/web/theme.js}"></script>
+	<script>
+        var $$ = mdui.$;
+        //打开页面的时候不显示
+        var fabBtnTop = new mdui.Fab('#fab-btn-top');
+        fabBtnTop.hide();
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 400) {
+                fabBtnTop.show();
+            } else {
+                fabBtnTop.hide();
+            }
+        })
+        //点击返回top
+        var scroll = new SmoothScroll();
+        $("#btn-top").on("click", function () {
+            scroll.animateScroll(0);
+        })
+	</script>
+</th:block>
+</html>

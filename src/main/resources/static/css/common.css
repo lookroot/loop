@@ -1,0 +1,13 @@
+/* 正文 */
+.content{
+    min-height: 800px;
+}
+/* foot */
+footer .ul-foot-link{
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+footer .ul-foot-link li{
+    margin-right: 10px;
+}

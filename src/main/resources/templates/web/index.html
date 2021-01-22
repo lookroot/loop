@@ -1,4 +1,23 @@
 <!doctype html>
 <html lang="ch" xmlns:th="http://www.thymeleaf.org">
-Hello Java 12
+<head>
+	<div th:replace="~{web/base/head::head}"></div>
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-deep-purple mdui-theme-accent-pink mdui-theme-layout-light">
+<!--nav-->
+<div th:replace="~{web/base/nav::nav(1)}"></div>
+
+<div class="content mdui-m-t-2  mdui-container-fluid">
+	<div class="mdui-col-md-8">
+		正文内容
+	</div>
+	<!--右侧-->
+	<div class="mdui-col-md-4 ">
+		<div th:replace="~{web/base/right::right}"></div>
+	</div>
+</div>
+<div th:replace="~{web/base/theme::theme}"></div>
+<div th:replace="~{web/base/foot::footer}"></div>
+
+</body>
 </html>
